@@ -1,0 +1,51 @@
+def choose_clothing(temperature, precipitation):
+    clothing = []
+
+    if temperature >= 30:
+        clothing.append("Легкая футболка или майка")
+        clothing.append("Легкие брюки или шорты")
+        clothing.append("Кроссовки или туфли")
+
+
+    elif temperature >= 20:
+        clothing.append("Легкая футболка или лонгслив")
+        clothing.append("Легкие брюки или шорты")
+        clothing.append("Кроссовки или легкие ботинки")
+
+
+    elif 15 <= temperature < 20:
+        clothing.append(" свитер")
+        clothing.append("Джинсы или легкие брюки")
+        clothing.append("Закрытые туфли ")
+        clothing.append(" ветровка")
+
+    elif 10 <= temperature < 15:
+        clothing.append("Пуховик  или дубленка")
+        clothing.append("Плотные брюки или утепленные джинсы")
+        clothing.append("Ботинки ")
+        clothing.append("Шарф и шапка")
+
+    elif temperature < 10:
+        clothing.append("Теплая зимняя куртка")
+        clothing.append("Утепленные брюки")
+        clothing.append("Cапоги")
+        clothing.append("Шарф, шапка и перчатки")
+
+
+    if precipitation:
+        clothing.append("дождевик с капюшоном")
+        clothing.append("Удобные Штаны")
+        clothing.append("Водонепроницаемые ботинки или сапоги")
+        clothing.append("Зонт и непромокаемая сумка")
+
+    return clothing
+
+
+temperature = float(input("Введите температуру (°C): "))
+precipitation = input("Есть ли осадки? (да/нет): ").strip().lower() == "да"
+
+clothing_suggestions = choose_clothing(temperature, precipitation)
+
+print("\n Надевайте:")
+for item in clothing_suggestions:
+    print(f"- {item}")
